@@ -13,7 +13,7 @@ def start():
     root.iconbitmap('rk.ico')
     root.geometry('700x400')
 
-    def Password_of_my_name(event):
+    def Password_of_my_name():
         global root
         root.destroy()
         root = Tk()
@@ -28,7 +28,6 @@ def start():
             final = ''
             key_index = 0
             alternate = 0
-
 
             for j, i in enumerate(code):
 
@@ -136,7 +135,7 @@ def start():
     # my_textbox = Text(my_frame, width=100 , height = 20 , font =('helvetica',10), selectbackground ='yellow' , selectforeground = 'black' , undo =True , )
     # my_textbox.pack()
 
-    def self_generate(event):
+    def self_generate():
         global root
         root.destroy()
         root = Tk()
@@ -183,6 +182,13 @@ def start():
             text_area = Text(root , yscrollcommand = True , width = 40 , height = 15)
             text_area.place(x = 20, y= 380)
             text_area.insert(tk.END , f'{string}')
+def passway():
+    root.tk()
+    root.destroy()
+    root = Tk()
+    root.title('Password-X : passway gate')
+    root.geometry('800x700')
+    
 
         def check():
             if int(password_length.get()) == '':
@@ -224,9 +230,9 @@ def start():
     Button(root, text = 'Generate a password of my name!' , command = Password_of_my_name , font = ('helvatica',15,'bold')).place(x = 20 , y = 50)
 
     Button(root, text = 'Generate Password for required condition!' , command = self_generate, font = ('helvatica',15,'bold')).place(x = 20 , y = 120)
+    
+    Button(root, text = 'Auto generate passway !' , command = passway, font = ('helvatica',15,'bold')).place(x = 20 , y = 190)
 
-    root.bind('<Control-Key-p>',Password_of_my_name)
-    root.bind('<Control-Key-g>' ,self_generate)
     root.mainloop()
 
 if __name__ == '__main__':
